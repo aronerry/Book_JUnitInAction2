@@ -20,18 +20,16 @@
  */
 package com.manning.junitbook.ch03.mastering;
 
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertThat;
-import static org.hamcrest.CoreMatchers.anyOf;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.matchers.JUnitMatchers.hasItem;
+import org.junit.matchers.JUnitMatchers;
 
 /**
  * A sample hamcrest test.
@@ -58,7 +56,10 @@ public class HamcrestTest {
 
 	@Test
 	public void testWithHamcrest() {
-		assertThat(values, hasItem(anyOf(equalTo("one"), equalTo("two"),
-			equalTo("three"))));
+		assertThat(values, JUnitMatchers.hasItem(CoreMatchers.anyOf(CoreMatchers.equalTo("one"), CoreMatchers.equalTo("two"),
+				CoreMatchers.equalTo("three"))));
+
+		assertThat(values, CoreMatchers.hasItem(CoreMatchers.anyOf(CoreMatchers.equalTo("one"), CoreMatchers.equalTo("two"),
+				CoreMatchers.equalTo("three"))));
 	}
 }

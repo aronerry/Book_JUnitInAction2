@@ -85,6 +85,7 @@ public class TestDefaultController
     {
         SampleRequest request = new SampleRequest( "testNotDefined" );
 
+        // the following line is supposed to throw a RuntimeException
         controller.getHandler( request );
     }
 
@@ -94,6 +95,7 @@ public class TestDefaultController
         SampleRequest request = new SampleRequest();
         SampleHandler handler = new SampleHandler();
 
+        // the following line is supposed to throw a RuntimeException
         controller.addHandler( request, handler );
     }
 
