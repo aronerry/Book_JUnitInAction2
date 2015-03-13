@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+   this work for additional information regarding copyright ownership.
+   The ASF licenses this file to You under the Apache License, Version 2.0
+   (the "License"); you may not use this file except in compliance with
+   the License.  You may obtain a copy of the License at
+ 
+       http://www.apache.org/licenses/LICENSE-2.0
+ 
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
+<project name="JUnit II" basedir="." default="test"  xmlns:ivy="antlib:org.apache.ivy.ant">
+	
+	<target name="init" depends="">
+		
+		<property file="build.properties"/>
+		
+		<property name="src.dir" location="${basedir}/src/main"/>
+		<property name="src.webapp.dir" location="${src.dir}/webapp"/>
+		<property name="src.test.dir" location="${basedir}/src/test"/>
+		<property name="target.dir" location="${basedir}/target"/>
+		<property name="classes.dir" location="${target.dir}/classes"/>
+		<property name="test.classes.dir" location="${target.dir}/classes"/>
+    <property name="lib.dir" location="${basedir}/lib"/>
+		<property name="reports.dir" location="${target.dir}/reports"/>
+		<property name="app.dir" location="${src.dir}/app"/>
+		<property name="logs.dir" location="${target.dir}/logs"/>
+
+		
+	    <ivy:configure file="ivysettings.xml" />
+	    <ivy:retrieve file="ivy.xml" sync="true"/>
+		
+		<path id="compile.cp">
+			<fileset dir="${lib.dir}">
+				<include name="*.*"/>
+			</fileset>
+		</path>
+	</target>
+
+    <target name="prepare" depends="init">
+    	<mkdir dir="${target.dir}"/>
+    	<mkdir dir="${logs.dir}"/>
+    	<mkdir dir="${classes.dir}"/>
+    	<mkdir dir="${test.classes.dir}"/>
+    	<mkdir dir="${reports.dir}"/>
+    	<mkdir dir="${lib.dir}"/>
+    </target>
+	
+	<target name="load.tasks" depends="init, prepare">
+      <taskdef resource="cactus.tasks"
+             classpathref="compile.cp">
+        </taskdef>
+	</target>
+    <target name="compile" depends="init,prepare">
+    	<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="compile.cp"/>
+    	<javac srcdir="${src.test.dir}" destdir="${test.classes.dir}"> 
+        <classpath>
+          <path refid="compile.cp"/>
+          <pathelement location="${classes.dir}"/>
+        </classpath>
+      </javac>
+    </target>
+	
+    <target name="prepareWar" depends="init,prepare,compile">
+        <war destfile="${target.dir}/ch12.war"
+             webxml="${src.webapp.dir}/WEB-INF/web.xml">
+        	<classes dir="${classes.dir}"/>
+        	<classes dir="${test.classes.dir}"/>
+          <lib dir="${lib.dir}">
+              <include name="**beanutils*.jar"/>
+          </lib>
+          <fileset dir="${src.webapp.dir}">
+            <include name="*.jsp"/>
+          </fileset>
+        </war>
+    </target>
+	
+    <target name="cactifywar" depends="init, load.tasks, prepare, prepareWar">
+        <cactifywar srcfile="${target.dir}/ch12.war" destfile="${target.dir}/ch12-cactified.war"/>
+    </target>
+	
+    <target name="test" depends="init,cactifywar">
+        <cactus warfile="${target.dir}/ch12-cactified.war"
+             printsummary="yes">
+             <classpath>
+                 <path refid="compile.cp"/>
+                 <pathelement location="${classes.dir}"/>
+             </classpath>
+             <containerset>
+                 <cargo containerId="tomcat5x" output="${logs.dir}/output.log" log="${logs.dir}/cargo.log" home="${tomcat.home}">
+                     <configuration>
+                         <property name="cargo.servlet.port" value="8080"/>
+                         <property name="cargo.logging" value="low"/>
+                         <deployable type="war" file="${target.dir}/ch12-cactified.war"/>
+                     </configuration>
+                 </cargo>
+             </containerset>
+             
+             <formatter type="plain"/>
+             <batchtest todir="${reports.dir}">
+                 <fileset dir="${src.test.dir}/java/">
+                     <include name="**/Test*.java"/>
+                 	 <exclude name="**/*TestAllWithJetty*.java"/>
+                 </fileset>
+             </batchtest>
+         </cactus>
+    </target>
+	
+	<target name="test-jetty" depends="init, load.tasks, compile">
+		
+	</target>
+	
+    <target name="clean" depends="init">
+    	<delete file="*.ear"/>
+    	<delete dir="${target.dir}"/>
+    </target>
+</project>

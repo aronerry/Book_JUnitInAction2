@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<dataset>
+  <users id="${id}" username="ElDuderino" first_name="Jeffrey" last_name="Lebowsky" />
+  <phones id="${phoneId}" user_id="${id}" type="0" number="481 516-2342"/>
+</dataset>

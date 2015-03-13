@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!--
+        Licensed to the Apache Software Foundation (ASF) under one or more
+        contributor license agreements. See the NOTICE file distributed with
+        this work for additional information regarding copyright ownership.
+        The ASF licenses this file to you under the Apache License, Version
+        2.0 (the "License"); you may not use this file except in compliance
+        with the License. You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+        applicable law or agreed to in writing, software distributed under the
+        License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+        CONDITIONS OF ANY KIND, either express or implied. See the License for
+        the specific language governing permissions and limitations under the
+        License.
+    -->
+<project name="ch05-stubs" default="test" xmlns:ivy="antlib:org.apache.ivy.ant">
+
+	<property file="build.properties" />
+
+	<property name="src.dir" location="src" />
+	<property name="src.java.dir" location="${src.dir}/main/java" />
+	<property name="src.test.dir" location="${src.dir}/test/java" />
+
+	<property name="target.dir" location="target" />
+	<property name="target.classes.java.dir" location="${target.dir}/classes" />
+	<property name="target.classes.test.dir" location="${target.dir}/test-classes" />
+
+	<property name="target.report.dir" location="${target.dir}/junit-reports" />
+
+	<ivy:retrieve file="./ivy.xml" sync="true" />
+
+	<path id="lib.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="compile.java">
+		<mkdir dir="${target.classes.java.dir}" />
+		<javac destdir="${target.classes.java.dir}" debug="on">
+			<src path="${src.java.dir}" />
+			<classpath>
+				<path refid="lib.classpath" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compile.test" depends="compile.java">
+		<mkdir dir="${target.classes.test.dir}" />
+		<javac destdir="${target.classes.test.dir}" debug="on">
+			<src path="${src.test.dir}" />
+			<classpath>
+				<pathelement location="${target.classes.java.dir}" />
+				<path refid="lib.classpath" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="compile" depends="compile.java,compile.test" />
+
+	<target name="test" depends="compile">
+		<mkdir dir="${target.report.dir}" />
+		<junit printsummary="yes" haltonerror="yes" haltonfailure="yes" fork="yes">
+			<formatter type="plain" usefile="false" />
+			<formatter type="xml" />
+			<batchtest todir="${target.report.dir}">
+				<fileset dir="${src.test.dir}">
+					<include name="**/*Test*.java" />
+					<exclude name="**/Test*All.java" />
+				</fileset>
+			</batchtest>
+			<classpath>
+				<path refid="lib.classpath" />
+				<pathelement location="${target.classes.java.dir}" />
+				<pathelement location="${target.classes.test.dir}" />
+			</classpath>
+		</junit>
+	</target>
+
+	<target name="run-jetty-sample" depends="compile">
+		<property name="jetty.sample" value="com.manning.junitbook.ch06.stubs.JettySample"/>
+		<java classname="${jetty.sample}" fork="true">
+			<classpath>
+				<path refid="lib.classpath"/>
+                <pathelement location="${target.classes.java.dir}" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="clean">
+		<delete dir="${target.dir}" />
+	</target>
+
+</project>

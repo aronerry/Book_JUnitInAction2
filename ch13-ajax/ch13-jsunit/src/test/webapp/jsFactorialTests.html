@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>JsUnit Factorial Tests - Chapter 13</title>
+    <link rel="stylesheet" type="text/css" href="../../../jsunit/css/jsUnitStyle.css">
+    <script type="text/javascript" src="../../../jsunit/app/jsUnitCore.js"></script>
+    <script type="text/javascript" src="../../../src/main/webapp/factorial.js"></script>
+    <script type="text/javascript">
+    	function test15() {
+			assertEquals(factorial(15), 1307674368000);
+		}
+	
+		function testRegEx() {
+	    	var actual = "JUnit in Action";
+			assertTrue(actual, /in/.test(actual));
+			assertFalse(actual, /out/.test(actual));
+		}    
+    </script>
+</head>
+<body>
+<h1>JsUnit Chapter 13 Tests</h1>
+	<p>This page contains tests for the Chapter 13 examples.</p>
+	<p>To see the tests, view the source for this page.</p>
+</body>
+</html>

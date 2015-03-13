@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE application
+  PUBLIC '-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN'
+  'http://java.sun.com/j2ee/dtds/application_1_3.dtd'>
+
+<!-- TODO: In the future you won't have to create a specific
+     application.xml in which you have to declare a Cactus test
+     war if you don't have a war in your EAR -->
+     
+<application>
+  <display-name>Chapter 14 - Cactus</display-name>
+  <description>Chapter 14 - Cactus</description>
+  <module>
+    <ejb>ch14-cactus-2.0-SNAPSHOT.jar</ejb>
+  </module>
+</application>

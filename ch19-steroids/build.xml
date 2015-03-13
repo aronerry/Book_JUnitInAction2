@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Licensed to the Apache Software Foundation (ASF) under one or more
+		contributor license agreements. See the NOTICE file distributed with
+		this work for additional information regarding copyright ownership.
+		The ASF licenses this file to you under the Apache License, Version
+		2.0 (the "License"); you may not use this file except in compliance
+		with the License. You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<project name="Chapter 19" default="test">
+
+
+  <!-- import default properties -->
+  <property file="../lib/build.properties" />
+
+  <!-- import default targets -->
+  <import file="../lib/build-targets.xml" />
+
+  <!-- project-specifc settings -->
+
+  <path id="ref.dependencies.main">
+    <pathelement path="${dependency.jpa}"/>
+    <pathelement path="${dependency.hibernate.core}"/>
+    <pathelement path="${dependency.hibernate.jpa}"/>
+    <pathelement path="${dependency.hibernate.annotations}"/>
+    <pathelement path="${dependency.hibernate.commons_annotations}"/>
+    <!-- Hibernate dependencies -->
+    <pathelement path="${dependency.dom4j}"/>
+    <pathelement path="${dependency.javassist}"/>
+    <pathelement path="${dependency.geronimo}"/>
+    <pathelement path="${dependency.commons.logging}"/>
+    <pathelement path="${dependency.commons.collections}"/>
+    <pathelement path="${dependency.antlr}"/>
+  </path>
+
+  <path id="ref.dependencies.test">
+    <path refid="ref.dependencies.main"/>
+    <pathelement path="${dependency.junit}"/>
+    <pathelement path="${dependency.dbunit}"/>
+    <pathelement path="${dependency.easymock}"/>
+    <pathelement path="${dependency.hsqldb}"/>
+
+    <pathelement path="${dependency.fest.assert}"/>
+    <pathelement path="${dependency.fest.mocks}"/>
+    <pathelement path="${dependency.fest.reflect}"/>
+    <pathelement path="${dependency.fest.util}"/>
+    <pathelement path="${dependency.jmock}"/>
+    <pathelement path="${dependency.junit_addons}"/>
+    <pathelement path="${dependency.log4j}"/>
+    <pathelement path="${dependency.mycila.plugin}"/>
+    <pathelement path="${dependency.mycila.easymock}"/>
+    <pathelement path="${dependency.mycila.jmock}"/>
+    <pathelement path="${dependency.mycila.api}"/>
+
+    <pathelement path="${dependency.slf4j.api}"/>
+    <pathelement path="${dependency.slf4j.log4j}"/>
+<!-- other SLF4J implementations
+    <pathelement path="${dependency.slf4j.nop}"/>
+    <pathelement path="${dependency.slf4j.simple}"/>
+-->
+    <pathelement path="${dependency.unitils}"/>
+<!-- Unitils Assertions dependencies -->
+    <pathelement path="${dependency.ognl}"/> 
+    <pathelement path="${dependency.commons.lang}"/> 
+<!-- Unitils Database dependencies -->
+    <pathelement path="${dependency.commons.pool}"/> 
+    <pathelement path="${dependency.commons.dbcp}"/> 
+    <pathelement path="${dependency.spring}"/> 
+<!-- FEST Mocks dependencies -->
+    <pathelement path="${dependency.cglib}"/> 
+    <pathelement path="${dependency.asm}"/> 
+    <pathelement path="${dependency.easymockclassextension}"/>
+<!-- Mycilla Mocks dependencies -->
+    <pathelement path="${dependency.hamcrest}"/> 
+  </path>
+
+</project>

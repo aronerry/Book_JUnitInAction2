@@ -1,0 +1,29 @@
+Installing The JIA2 examples
+---------------------------
+
+1 Download the latest release from http://sf.net/projects/junitbook and unzip
+  it in [jia_home] or check it out from CVS in [jia_home]. The different 
+  projects corresponding to book chapters are located in junitbook/
+
+
+Installing JUnit In Action Examples in Eclipse using SVN
+--------------------------------------------------------
+
+1 Install Eclipse 3.0+
+
+Installing Ant
+--------------
+
+1 Download the latest Ant version and install it in [ant_home]
+2 Set the ANT_HOME environment variable to [ant_home] and add ANT_HOME\bin
+  (or ANT_HOME/bin) to the PATH environment variable
+
+Installing Maven
+----------------
+
+1 Download Maven from http://maven.apache.org or check it out
+  from SVN
+2 Set the MAVEN_REPO environment variable to point to [jia_home]/junitbook/repository
+
+Enjoy!
+-The JIA Team

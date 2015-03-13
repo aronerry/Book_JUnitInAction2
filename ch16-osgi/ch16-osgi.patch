@@ -1,0 +1,45 @@
+Index: calculator-client/build.xml
+===================================================================
+--- calculator-client/build.xml	(revision 597)
++++ calculator-client/build.xml	(working copy)
+@@ -30,9 +30,9 @@
+ 	</target>
+ 
+ 	<target name="package" depends="init, test">
+-		<jar destfile="${target.dir}/calculator.jar" 
++		<jar destfile="${target.dir}/calculator-client.jar" 
+ 			basedir="${target.classes.dir}" 
+-			manifest="${resources.dir}/MANIFEST.MF"/>
++			manifest="${resources.dir}/META-INF/MANIFEST.MF"/>
+     </target>
+ 	
+ 	<target name="clean" depends="init">
+Index: calculator-test/src/main/java/com/manning/junitbook/ch16/test/TestClientActivator.java
+===================================================================
+--- calculator-test/src/main/java/com/manning/junitbook/ch16/test/TestClientActivator.java	(revision 597)
++++ calculator-test/src/main/java/com/manning/junitbook/ch16/test/TestClientActivator.java	(working copy)
+@@ -88,6 +88,6 @@
+         assertNotNull( "Result from parseUserInput must not be null", numbers );
+         double result = cs.multiply( numbers );
+         assertNotNull( "Result from multiply must not be null", result );
+-        assertEquals( "Result must be 3.6", 3.6, result, 0.1 );
++        assertEquals( "Result must be 2.88", 2.88, result, 0.1 );
+     }
+ }
+\ No newline at end of file
+Index: calculator-service/build.xml
+===================================================================
+--- calculator-service/build.xml	(revision 597)
++++ calculator-service/build.xml	(working copy)
+@@ -30,9 +30,9 @@
+ 	</target>
+ 
+ 	<target name="package" depends="init, test">
+-		<jar destfile="${target.dir}/calculator.jar" 
++		<jar destfile="${target.dir}/calculator-service.jar" 
+ 			basedir="${target.classes.dir}" 
+-			manifest="${resources.dir}/MANIFEST.MF"/>
++			manifest="${resources.dir}/META-INF/MANIFEST.MF"/>
+     </target>
+ 	
+ 	<target name="clean" depends="init">

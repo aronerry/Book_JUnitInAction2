@@ -1,0 +1,40 @@
+<project name="ch12-ajax-rhinounit" basedir="." default="run-all-tests">
+
+	<target name="run-all-tests" depends="run-unit-tests, run-js-lint" />
+
+	<property name="src.dir" value="src/main/webapp" />
+	<property name="test.dir" value="src/test/webapp" />
+	<property name="rhinounit.dir" value="rhinounit_1_2_1" />
+	<property name="rhinounit.src" value="${rhinounit.dir}/src" />
+	<property name="jslint.src" value="${rhinounit.dir}/jslint" />
+
+	<!-- Requires Java 6 or Java 5 + BSF -->
+	<scriptdef name="rhinounit" src="${rhinounit.src}/rhinoUnitAnt.js" language="javascript">
+		<attribute name="options" />
+		<attribute name="ignoredglobalvars" />
+		<attribute name="haltOnFirstFailure" />
+		<attribute name="rhinoUnitUtilPath" />
+		<element name="fileset" type="fileset" />
+	</scriptdef>
+
+	<target name="run-unit-tests">
+		<rhinounit options="{verbose:true, stackTrace:true}" ignoredglobalvars="rhinounit" rhinoUnitUtilPath="${rhinounit.src}/rhinoUnitUtil.js">
+			<fileset dir="${test.dir}">
+				<include name="*.js" />
+			</fileset>
+		</rhinounit>
+	</target>
+
+	<scriptdef name="jslintant" src="${jslint.src}/jslintant.js" language="javascript">
+		<attribute name="options" />
+		<attribute name="jslintpath" />
+		<element name="fileset" type="fileset" />
+	</scriptdef>
+
+	<target name="run-js-lint">
+		<jslintant options="{eqeqeq : true, white: true, plusplus : false, bitwise : true, evil: true, passfail: false}" jslintpath="${jslint.src}/fulljslint.js">
+			<fileset dir="${src.dir}" />
+		</jslintant>
+	</target>
+
+</project>

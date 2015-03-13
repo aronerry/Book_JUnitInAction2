@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="WM-AMS-PET" id="0" name="TestDefaultController" package="com.manning.junitbook.ch09.ant" tests="5" time="0.047" timestamp="2010-01-16T17:27:29">
+      <properties>
+          <property name="java.vendor" value="Sun Microsystems Inc." />
+
+          <property name="src.test.dir" value="C:\junitbook2\ch09-ant\src\test" />
+
+          <property name="ivy.conf.dir" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings" />
+
+          <property name="sun.java.launcher" value="SUN_STANDARD" />
+
+          <property name="ivy.configurations" value="*" />
+
+          <property name="sun.management.compiler" value="HotSpot Client Compiler" />
+
+          <property name="ivy.conf.url" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings/ivysettings-public.xml" />
+
+          <property name="os.name" value="Windows XP" />
+
+          <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_10\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_10\jre\classes" />
+
+          <property name="sun.desktop" value="windows" />
+
+          <property name="ivy.module" value="sampling-ivy" />
+
+          <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+
+          <property name="ivy.default.conf.dir" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings" />
+
+          <property name="ant.home" value="D:\apache\apache-ant-1.7.0" />
+
+          <property name="java.runtime.version" value="1.6.0_10-b33" />
+
+          <property name="src.java.dir" value="C:\junitbook2\ch09-ant\src\java" />
+
+          <property name="ivy.lib.dir" value="C:\junitbook2\ch09-ant/lib" />
+
+          <property name="ivy.default.settings.dir" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings" />
+
+          <property name="user.name" value="petar.tahchiev" />
+
+          <property name="ivy.home" value="C:\Documents and Settings\petar.tahchiev\.ivy2" />
+
+          <property name="ivy.revision" value="working@WM-AMS-PET" />
+
+          <property name="user.language" value="en" />
+
+          <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_10\jre\bin" />
+
+          <property name="ivy.deliver.ivy.pattern" value="${ivy.distrib.dir}/[type]s/[artifact]-[revision].[ext]" />
+
+          <property name="ivy.log.modules.in.use" value="false" />
+
+          <property name="ant.project.name" value="ch09-ant" />
+
+          <property name="ivy.settings.file" value="ivysettings.xml" />
+
+          <property name="java.version" value="1.6.0_10" />
+
+          <property name="user.timezone" value="" />
+
+          <property name="ivy.resolved.configurations" value="default" />
+
+          <property name="ivy.organisation" value="junitbook" />
+
+          <property name="ivy.resolve.default.type.filter" value="*" />
+
+          <property name="sun.arch.data.model" value="32" />
+
+          <property name="ivy.retrieve.pattern" value="${ivy.lib.dir}/[artifact]-[revision].[ext]" />
+
+          <property name="ivy.cache.dir" value="C:\Documents and Settings\petar.tahchiev\.ivy2\cache" />
+
+          <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\endorsed" />
+
+          <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86" />
+
+          <property name="sun.jnu.encoding" value="Cp1252" />
+
+          <property name="file.encoding.pkg" value="sun.io" />
+
+          <property name="file.separator" value="\" />
+
+          <property name="java.specification.name" value="Java Platform API Specification" />
+
+          <property name="java.class.version" value="50.0" />
+
+          <property name="user.country" value="US" />
+
+          <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_10\jre" />
+
+          <property name="java.vm.info" value="mixed mode, sharing" />
+
+          <property name="ivy.build.artifacts.dir" value="C:\junitbook2\ch09-ant/build/artifacts" />
+
+          <property name="ant.file" value="C:\junitbook2\ch09-ant\build.xml" />
+
+          <property name="os.version" value="5.1" />
+
+          <property name="path.separator" value=";" />
+
+          <property name="java.vm.version" value="11.0-b15" />
+
+          <property name="user.variant" value="" />
+
+          <property name="ant.library.dir" value="D:\apache\apache-ant-1.7.0\lib" />
+
+          <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+
+          <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+
+          <property name="ivy.status" value="integration" />
+
+          <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+
+          <property name="user.home" value="C:\Documents and Settings\petar.tahchiev" />
+
+          <property name="ivy.report.output.pattern" value="[organisation]-[module]-[conf].[ext]" />
+
+          <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+
+          <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_10\bin;.;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\Program Files\CVSNT\;D:\cobertura\cobertura-1.9;C:\Program Files\Common Files\Teleca Shared;C:\strawberry\c\bin;C:\strawberry\perl\bin;C:\Program Files\QuickTime\QTSystem\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.0.9\bin;C:\Program Files\CVSNT\;D:\cobertura\cobertura-1.9;C:\Program Files\Common Files\Teleca Shared;C:\strawberry\c\bin;C:\strawberry\perl\bin;C:\Program Files\QuickTime\QTSystem\;C:\WINDOWS\system32\WindowsPowerShell\v1.0;d:\bin\;C:\Program Files\Java\jdk1.6.0_10\bin;D:\apache\apache-ant-1.7.0\bin;D:\apache\apache-maven-2.1.0\bin;C:\Program Files\CVSNT\;D:\cobertura\cobertura-1.9;C:\Program Files\Nmap" />
+
+          <property name="java.vendor.url" value="http://java.sun.com/" />
+
+          <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+
+          <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+
+          <property name="java.class.path" value="D:\apache\apache-ant-1.7.0\lib\ant-launcher.jar;C:\junitbook2\ch09-ant\.;C:\Program Files\Java\jre6\lib\ext\QTJava.zip;D:\apache\apache-ant-1.7.0\lib\ant-antlr.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-bcel.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-bsf.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-log4j.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-oro.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-regexp.jar;D:\apache\apache-ant-1.7.0\lib\ant-apache-resolver.jar;D:\apache\apache-ant-1.7.0\lib\ant-commons-logging.jar;D:\apache\apache-ant-1.7.0\lib\ant-commons-net.jar;D:\apache\apache-ant-1.7.0\lib\ant-jai.jar;D:\apache\apache-ant-1.7.0\lib\ant-javamail.jar;D:\apache\apache-ant-1.7.0\lib\ant-jdepend.jar;D:\apache\apache-ant-1.7.0\lib\ant-jmf.jar;D:\apache\apache-ant-1.7.0\lib\ant-jsch.jar;D:\apache\apache-ant-1.7.0\lib\ant-junit.jar;D:\apache\apache-ant-1.7.0\lib\ant-launcher.jar;D:\apache\apache-ant-1.7.0\lib\ant-netrexx.jar;D:\apache\apache-ant-1.7.0\lib\ant-nodeps.jar;D:\apache\apache-ant-1.7.0\lib\ant-starteam.jar;D:\apache\apache-ant-1.7.0\lib\ant-stylebook.jar;D:\apache\apache-ant-1.7.0\lib\ant-swing.jar;D:\apache\apache-ant-1.7.0\lib\ant-testutil.jar;D:\apache\apache-ant-1.7.0\lib\ant-trax.jar;D:\apache\apache-ant-1.7.0\lib\ant-weblogic.jar;D:\apache\apache-ant-1.7.0\lib\ant.jar;D:\apache\apache-ant-1.7.0\lib\clover-1.2.3.jar;D:\apache\apache-ant-1.7.0\lib\ivy-2.0.0-beta1.jar;D:\apache\apache-ant-1.7.0\lib\ivy-core-2.0.0-beta1.jar;D:\apache\apache-ant-1.7.0\lib\xercesImpl.jar;D:\apache\apache-ant-1.7.0\lib\xml-apis.jar;C:\Program Files\Java\jdk1.6.0_10\lib\tools.jar" />
+
+          <property name="ant.version" value="Apache Ant version 1.7.0 compiled on December 13 2006" />
+
+          <property name="ant.file.ch09-ant" value="C:\junitbook2\ch09-ant\build.xml" />
+
+          <property name="ivy.settings.dir" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings" />
+
+          <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+
+          <property name="target.classes.test.dir" value="C:\junitbook2\ch09-ant\target\classes\test" />
+
+          <property name="ivy.settings.url" value="jar:file:/D:/apache/apache-ant-1.7.0/lib/ivy-2.0.0-beta1.jar!/org/apache/ivy/core/settings/ivysettings-public.xml" />
+
+          <property name="java.vm.specification.version" value="1.0" />
+
+          <property name="junit.jar" value="C:\junitbook2\ch09-ant\lib\junit-4.5.jar" />
+
+          <property name="sun.os.patch.level" value="Service Pack 3" />
+
+          <property name="sun.cpu.endian" value="little" />
+
+          <property name="tests" value="TestDefaultController" />
+
+          <property name="ivy.nb.targets.copied" value="0" />
+
+          <property name="java.io.tmpdir" value="C:\DOCUME~1\PETAR~1.TAH\LOCALS~1\Temp\" />
+
+          <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+
+          <property name="ivy.deps.changed" value="false" />
+
+          <property name="ivy.default.always.check.exact.revision" value="true" />
+
+          <property name="os.arch" value="x86" />
+
+          <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+
+          <property name="ivy.project.dir" value="C:\junitbook2\ch09-ant" />
+
+          <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_10\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext" />
+
+          <property name="target.report.dir" value="C:\junitbook2\ch09-ant\target\report" />
+
+          <property name="user.dir" value="C:\junitbook2\ch09-ant" />
+
+          <property name="target.classes.java.dir" value="C:\junitbook2\ch09-ant\target\classes\java" />
+
+          <property name="ivy.publish.src.artifacts.pattern" value="${ivy.distrib.dir}/[type]s/[artifact]-[revision].[ext]" />
+
+          <property name="line.separator" value=" " />
+
+          <property name="java.vm.name" value="Java HotSpot(TM) Client VM" />
+
+          <property name="ivy.distrib.dir" value="C:\junitbook2\ch09-ant/distrib" />
+
+          <property name="basedir" value="C:\junitbook2\ch09-ant" />
+
+          <property name="ant.java.version" value="1.6" />
+
+          <property name="ant.core.lib" value="D:\apache\apache-ant-1.7.0\lib\ant.jar" />
+
+          <property name="file.encoding" value="Cp1252" />
+
+          <property name="ivy.resolved.file" value="C:\junitbook2\ch09-ant\ivy.xml" />
+
+          <property name="target.dir" value="C:\junitbook2\ch09-ant\target" />
+
+          <property name="ivy.targets.copied" value="false" />
+
+          <property name="ivy.default.ivy.user.dir" value="C:\Documents and Settings\petar.tahchiev\.ivy2" />
+
+          <property name="ivy.resolver.default.check.modified" value="false" />
+
+          <property name="ivy.buildlist.ivyfilepath" value="ivy.xml" />
+
+          <property name="java.specification.version" value="1.6" />
+
+          <property name="src.dir" value="C:\junitbook2\ch09-ant\src" />
+
+          <property name="ivy.dep.file" value="ivy.xml" />
+
+          <property name="ivy.checksums" value="sha1,md5" />
+
+      </properties>
+
+      <testcase classname="com.manning.junitbook.ch09.ant.TestDefaultController" name="testAddHandler" time="0.0" />
+
+      <testcase classname="com.manning.junitbook.ch09.ant.TestDefaultController" name="testProcessRequest" time="0.0" />
+
+      <testcase classname="com.manning.junitbook.ch09.ant.TestDefaultController" name="testProcessRequestAnswersErrorResponse" time="0.0" />
+
+      <testcase classname="com.manning.junitbook.ch09.ant.TestDefaultController" name="testGetHandlerNotDefined" time="0.0" />
+
+      <testcase classname="com.manning.junitbook.ch09.ant.TestDefaultController" name="testAddRequestDuplicateName" time="0.0" />
+
+      <system-out />
+
+      <system-err />
+
+  </testsuite>
+</testsuites>

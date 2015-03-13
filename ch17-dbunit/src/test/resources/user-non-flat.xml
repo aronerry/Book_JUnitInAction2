@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+  <table name="users">
+    <column>id</column>
+    <column>username</column>
+    <column>first_name</column>
+    <column>last_name</column>
+    <row>
+      <value>1</value>
+      <value>ElDuderino</value>
+      <value>Jeffrey</value>
+      <value>Lebowsky</value>
+    </row>
+  </table>
+</dataset>

@@ -1,0 +1,6 @@
+Bundle-Name: Calculator client
+Bundle-Description: A bundle that uses the calculator service if it finds it at startup
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: com.manning.junitbook.ch16.client.ClientBundleActivator
+Import-Package: junit.framework, org.osgi.framework, com.manning.junitbook.ch16.service

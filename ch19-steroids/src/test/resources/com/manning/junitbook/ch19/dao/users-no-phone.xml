@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!DOCTYPE dataset SYSTEM "target/test-classes/user.dtd">
+<dataset>
+  <users id="1" username="ElDuderino" first_name="Jeffrey" last_name="Lebowsky" />
+  <users id="2" username="TheStranger" first_name="" last_name="" />
+  <phones/> <!-- trick so phones table is always cleaned before test cases  -->
+</dataset>

@@ -1,0 +1,8 @@
+Bundle-Name: Calculator
+Bundle-Description: A sample calculator bundle that registers the calculator service
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: com.manning.junitbook.ch16.CalculatorBundleActivator
+Export-Package: com.manning.junitbook.ch16.service
+Import-Package: org.osgi.framework,junit.framework
+Test-Suite: com.manning.junitbook.ch16.service.test.CalculatorServiceTest

@@ -1,0 +1,44 @@
+<html>
+<body>
+
+<script type="text/javascript">
+function newXHR() {
+   if (window.XMLHttpRequest) {
+      return new XMLHttpRequest();
+   } else if (window.ActiveXObject) {
+      return new ActiveXObject("Microsoft.XMLHTTP");
+   } else {
+      alert("This browser does not support XMLHTTP.");
+   }
+}
+function setTime() {
+   var xhr = newXHR();
+   xhr.onreadystatechange=function() {
+      if(xhr.readyState == 4) {
+        document.timeForm.serverTime.value=xhr.responseText;
+      }
+   }
+   xhr.open("GET","time.asp", true);
+   xhr.send(null);
+}
+function setMessage() {
+   var xhr = newXHR();
+   xhr.onreadystatechange=function() {
+      if(xhr.readyState == 4) {
+        document.helloForm.serverMessage.value=xhr.responseText;
+      }
+   }
+   xhr.open("GET","hello-world.asp", true);
+   xhr.send(null);
+}
+</script>
+
+<form name="timeForm">Type: <input type="text" name="inputValue"
+	onkeyup="setTime();" /> Server Time: <input type="text"
+	name="serverTime" /></form>
+<form name="helloForm"><input value="Get Message" type="button"
+	name="getMsgBtn" onclick="setMessage();" /> Message: <input
+	type="text" name="serverMessage" /></form>
+
+</body>
+</html>

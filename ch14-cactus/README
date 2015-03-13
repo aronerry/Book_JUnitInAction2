@@ -1,0 +1,2 @@
+CAUTION!!!!
+If you are running the examples on a Mac computer you have to execute maven with the following option: -Djava.io.tmpdir=/tmp

@@ -1,0 +1,64 @@
+<project name="ch16-OSGi-client" default="package" basedir=".">
+
+	<target name="init" depends="">
+	    <property name="src.dir" location="${basedir}/src/main/java"/>
+		<property name="src.tests.dir" location="${basedir}/src/test/java"/>
+		<property name="resources.dir" location="${basedir}/src/main/resources"/>
+        <property name="lib.dir" location="${basedir}/lib"/>    
+
+		<property name="target.dir" location="${basedir}/target"/>
+		<property name="target.classes.dir" location="${target.dir}/classes"/>
+		<property name="reports.tests.dir" location="${target.dir}/reports"/>
+			
+		<path id="compile.cp">
+			<fileset dir="${lib.dir}">
+				<include name="*.jar"/>
+			</fileset>
+			<filelist>
+				<file name="${basedir}/../calculator-service/target/calculator-service.jar"/>
+			</filelist>
+			<pathelement location="${basedir}/../lib/junit-4.6.jar"/>
+		</path>
+	</target>
+
+	<target name="prepare" depends="init">
+		<mkdir dir="${target.dir}"/>
+		<mkdir dir="${target.classes.dir}"/>
+		<mkdir dir="${reports.tests.dir}"/>
+	</target>
+
+	<target name="compile" depends="init,prepare">
+		<javac srcdir="${src.dir}" 
+			destdir="${target.classes.dir}" 
+			classpathref="compile.cp"/>
+		
+		<javac srcdir="${src.tests.dir}" 
+			destdir="${target.classes.dir}" 
+			classpathref="compile.cp"/>
+	</target>
+
+	<target name="test" depends="init, compile">
+		<junit printsummary="yes" haltonfailure="yes">
+			<classpath>
+				<path refid="compile.cp"/>
+				<pathelement location="${target.classes.dir}"/>
+			</classpath>
+			<formatter type="plain"/>
+			<batchtest fork="yes" todir="${reports.tests.dir}">
+				<fileset dir="${src.tests.dir}">
+					<include name="**/*Test*.java"/>
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<target name="package" depends="init, test">
+		<jar destfile="${target.dir}/calculator-client.jar" 
+			basedir="${target.classes.dir}" 
+			manifest="${resources.dir}/META-INF/MANIFEST.MF"/>
+    </target>
+	
+	<target name="clean" depends="init">
+		<delete dir="${target.dir}"/>
+	</target>
+</project>

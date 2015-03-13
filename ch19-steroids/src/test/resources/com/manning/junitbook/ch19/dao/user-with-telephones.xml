@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<dataset>
+  <users id="1" username="ElDuderino" first_name="Jeffrey" last_name="Lebowsky" />
+  <phones id="1" user_id="1" type="0" number="481 516-2342"/>
+  <phones id="2" user_id="1" type="2" number="108 555-6666"/>
+</dataset>

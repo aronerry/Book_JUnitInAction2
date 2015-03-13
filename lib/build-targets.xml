@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		Licensed to the Apache Software Foundation (ASF) under one or more
+		contributor license agreements. See the NOTICE file distributed with
+		this work for additional information regarding copyright ownership.
+		The ASF licenses this file to you under the Apache License, Version
+		2.0 (the "License"); you may not use this file except in compliance
+		with the License. You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the
+		License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+		CONDITIONS OF ANY KIND, either express or implied. See the License for
+		the specific language governing permissions and limitations under the
+		License.
+	-->
+<project name="Ant scripts">
+
+  <target name="copy.resources">
+    <copy todir="${target.classes.java.dir}" failonerror="false" overwrite="true">
+      <fileset dir="${src.resources.dir}"/>
+    </copy>
+  </target>
+
+  <target name="compile.java" depends="copy.resources">
+    <mkdir dir="${target.classes.java.dir}"/>
+    <javac destdir="${target.classes.java.dir}">
+      <src path="${src.java.dir}"/>
+      <classpath>
+        <path refid="ref.dependencies.main"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="compile.test" depends="compile.java,copy.test.resources">
+    <mkdir dir="${target.classes.test.dir}"/>
+    <javac destdir="${target.classes.test.dir}">
+      <src path="${src.test.dir}"/>
+      <classpath>
+        <pathelement location="${target.classes.java.dir}"/>
+        <path refid="ref.dependencies.test"/>
+      </classpath>
+    </javac>
+  </target>
+
+  <target name="copy.test.resources">
+    <copy todir="${target.classes.test.dir}" failonerror="false" overwrite="true">
+      <fileset dir="${src.test.resources.dir}"/>
+    </copy>
+  </target>
+
+  <target name="compile" depends="compile.java,compile.test"/>
+
+  <target name="test" depends="compile">
+    <mkdir dir="${target.report.dir}"/>
+    <property name="tests" value="TestDefaultController"/>
+    <junit printsummary="yes" haltonerror="yes" haltonfailure="yes">
+      <formatter type="plain" usefile="false"/>
+      <formatter type="xml"/>
+      <batchtest todir="${target.report.dir}">
+        <fileset dir="${src.test.dir}">
+          <include name="**/*Test.java"/>
+          <exclude name="**/Abstract*.java"/>
+        </fileset>
+      </batchtest>
+      <classpath>
+        <pathelement location="${target.classes.java.dir}"/>
+        <pathelement location="${target.classes.test.dir}"/>
+        <path refid="ref.dependencies.test"/>
+      </classpath>
+    </junit>
+  </target>
+
+  <target name="report" depends="test">
+    <mkdir dir="${target.report.dir}/html"/>
+    <junitreport todir="${target.report.dir}">
+      <fileset dir="${target.report.dir}">
+        <include name="TEST-*.xml"/>
+      </fileset>
+      <report todir="${target.report.dir}/html"/>
+    </junitreport>
+  </target>
+
+  <target name="clean">
+    <delete dir="${target.dir}"/>
+  </target>
+</project>

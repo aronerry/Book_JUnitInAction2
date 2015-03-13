@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements. See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to you under the Apache License, Version
+  2.0 (the "License"); you may not use this file except in compliance
+  with the License. You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+  applicable law or agreed to in writing, software distributed under the
+  License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+  CONDITIONS OF ANY KIND, either express or implied. See the License for
+  the specific language governing permissions and limitations under the
+  License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.manning.junitbook</groupId>
+		<artifactId>junit-in-action-II</artifactId>
+		<version>2.0-SNAPSHOT</version>
+	</parent>
+  <artifactId>ch19-steroids</artifactId>
+  <packaging>jar</packaging>
+  <name>JUnit in Action - Chapter 19</name>
+  <repositories>
+    <repository>
+      <id>java.net</id>
+      <url>http://download.java.net/maven/1</url>
+      <layout>legacy</layout>
+    </repository>
+    <repository>
+    <!-- FEST reposiotry -->
+      <id>FEST</id>
+      <url>http://fest.googlecode.com/svn/trunk/fest/m2/repository/</url>
+    </repository>
+  </repositories>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.4.2</version>
+        <configuration>
+          <excludes>
+            <include>**/Abstract*</include>
+            <include>**/*TestingHelper*</include>
+            <include>**/*$*</include>
+          </excludes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+  <!-- 
+     - main dependencies 
+    -->
+    <dependency>
+      <groupId>javax.persistence</groupId>
+      <artifactId>persistence-api</artifactId>
+      <version>1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+      <version>3.3.2.GA</version>
+      <exclusions>
+        <exclusion>
+          <groupId>javax.transaction</groupId>
+          <artifactId>jta</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>geronimo-spec</groupId>
+      <artifactId>geronimo-spec-jta</artifactId>
+      <version>1.0.1B-rc4</version>
+      <scope>provided</scope>
+    </dependency>
+  <!-- 
+     - testing dependencies 
+    -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.6</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <version>2.4.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <version>1.8.0.7</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+    <!-- used by Unitils -->
+      <groupId>org.springframework</groupId>
+      <artifactId>spring</artifactId>
+      <version>2.5.6</version>     
+      <scope>test</scope>
+    </dependency>
+    <!-- switch dependencies below to use simple-logging
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.4.3</version>
+      <scope>runtime</scope>
+    </dependency>
+     -->   
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>1.4.3</version>
+      <scope>test</scope>
+    </dependency>
+    
+<!-- Unitils and dependencies -->
+
+    <dependency>
+      <groupId>org.unitils</groupId>
+      <artifactId>unitils</artifactId>
+      <version>2.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>2.3</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ognl</groupId>
+      <artifactId>ognl</artifactId>
+      <version>2.6.9</version>
+      <scope>test</scope>
+    </dependency>
+    
+<!--  FEST and dependencies -->
+
+<!--  NOTE: dependency below is not available on FEST's repository yet, and the one which is does not work with
+            EasyMocks 2.4, which is used by Mycila (see http://jira.codehaus.org/browse/FEST-130)
+    <dependency>
+      <groupId>org.easytesting</groupId>
+      <artifactId>fest-mocks</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+ -->
+      
+    <dependency>
+      <groupId>fest</groupId>
+      <artifactId>fest-mocks</artifactId>
+      <version>1.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>fest</groupId>
+      <artifactId>fest-assert</artifactId>
+      <version>1.1a1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>fest</groupId>
+      <artifactId>fest-reflect</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+<!--  Mycila and dependencies -->  
+
+    <dependency>
+      <groupId>com.mycila.testing.plugins</groupId>
+      <artifactId>mycila-testing-jmock</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mycila.testing.plugins</groupId>
+      <artifactId>mycila-testing-easymock</artifactId>
+      <version>1.2</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 
+    <dependency>
+      <groupId>com.mycila.testing</groupId>
+      <artifactId>mycila-testing-api</artifactId>
+      <version>2.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.mycila.testing</groupId>
+      <artifactId>mycila-testing-all</artifactId>
+      <version>1.0-rc1</version>
+    </dependency>
+     -->
+    
+    <!--  JUnit Add-ons -->
+    
+    <dependency>
+      <groupId>junit-addons</groupId>
+      <artifactId>junit-addons</artifactId>
+      <scope>test</scope>
+    <version>1.4</version>
+    
+</dependency> 
+
+  </dependencies>
+  
+</project>

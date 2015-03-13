@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<dataset>
+  <users id="${db:id('User')}" username="ElDuderino" first_name="Jeffrey" last_name="Lebowsky" />
+  <phones id="${db:id('Telephone')}" user_id="${db:id('User')}" type="0" number="481 516-2342"/>
+  <phones id="${db:id('Telephone')+1}" user_id="${db:id('User')}" type="2" number="108 555-6666"/>
+</dataset>

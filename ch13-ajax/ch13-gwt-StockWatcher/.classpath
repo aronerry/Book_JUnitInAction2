@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.8.1/junit-4.8.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
+	<classpathentry kind="lib" path="gwt-windows-1.6.4/gwt-api-checker.jar"/>
+	<classpathentry kind="lib" path="gwt-windows-1.6.4/gwt-dev-windows.jar"/>
+	<classpathentry kind="lib" path="gwt-windows-1.6.4/gwt-servlet.jar"/>
+	<classpathentry kind="lib" path="gwt-windows-1.6.4/gwt-user.jar"/>
+	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+</classpath>

@@ -1,0 +1,8 @@
+Bundle-Name: Calculator-OSGi-Test
+Bundle-SymbolicName: SCalculator-OSGi-Example
+Bundle-Description: A bundle that contains the test-cases
+Import-Package: junit.framework,org.osgi.framework,org.apache.felix.ipojo.junit4osgi,com.manning.junitbook.ch16.service
+Private-Package: com.manning.junitbook.ch16.test
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Test-Suite: com.manning.junitbook.ch16.test.TestClientActivatorSuite

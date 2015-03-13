@@ -1,0 +1,1 @@
+@java -Dgwt.args="-web -out www-test" -Xmx256M -cp "%~dp0\src;%~dp0\test;%~dp0\war\WEB-INF\classes;%~dp0\/java/junit4.8.1/junit-4.8.1.jar;C:/Java/gwt-windows-1.6.4/gwt-user.jar;C:/Java/gwt-windows-1.6.4/gwt-dev-windows.jar" junit.textui.TestRunner com.google.gwt.sample.stockwatcher.client.StockWatcherTest %*

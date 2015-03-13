@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="calculator-service/src/main/java"/>
+	<classpathentry kind="src" path="calculator-client/src/main/java"/>
+	<classpathentry kind="src" path="calculator-test/src/main/java"/>
+	<classpathentry kind="src" path="calculator-service/src/test/java"/>
+	<classpathentry kind="src" path="calculator-client/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="M2_REPO/junit/junit/4.5/junit-4.5.jar"/>
+	<classpathentry kind="var" path="FELIX_HOME/bin/felix.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/apache/felix/org.apache.felix.ipojo.junit4osgi/1.1.0/org.apache.felix.ipojo.junit4osgi-1.1.0.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jmock/jmock-junit4/2.5.1/jmock-junit4-2.5.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/jmock/jmock/2.5.1/jmock-2.5.1.jar"/>
+	<classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-library/1.1/hamcrest-library-1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
