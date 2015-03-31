@@ -36,9 +36,10 @@ public class TestAccountService
     public void testTransferOk()
     {
         MockAccountManager mockAccountManager = new MockAccountManager();
-        Account senderAccount = new Account( "1", 200 );
         
+        Account senderAccount = new Account( "1", 200 );
         Account beneficiaryAccount = new Account( "2", 100 );
+        
         mockAccountManager.addAccount( "1", senderAccount );
         mockAccountManager.addAccount( "2", beneficiaryAccount );
         

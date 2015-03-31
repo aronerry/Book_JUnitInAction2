@@ -15,7 +15,7 @@
   <property name="target.report.dir" 
       location="${target.dir}/report"/>
 
-  <ivy:retrieve file="./ivy.xml" sync="true"/>
+  <!-- <ivy:retrieve file="./ivy.xml" sync="true"/> -->
 
   <target name="compile.java">
     <mkdir dir="${target.classes.java.dir}"/>

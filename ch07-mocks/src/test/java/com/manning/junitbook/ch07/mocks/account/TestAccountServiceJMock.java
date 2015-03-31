@@ -58,7 +58,6 @@ public class TestAccountServiceJMock
     public void testTransferOk()
     {
         final Account senderAccount = new Account( "1", 200 );
-
         final Account beneficiaryAccount = new Account( "2", 100 );
 
         context.checking( new Expectations()

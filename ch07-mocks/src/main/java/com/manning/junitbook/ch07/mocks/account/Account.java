@@ -34,6 +34,7 @@ public class Account
 
     /**
      * The balance of the account.
+     * 余额
      */
     private long balance;
 
@@ -51,6 +52,7 @@ public class Account
 
     /**
      * Withdraw the amount from the account.
+     * 减去指定金额
      * 
      * @param amount
      */
@@ -61,6 +63,7 @@ public class Account
 
     /**
      * Add the amount of money in the account.
+     * 增加指定金额
      * 
      * @param amount
      */

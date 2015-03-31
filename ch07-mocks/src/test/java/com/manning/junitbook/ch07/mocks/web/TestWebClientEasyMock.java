@@ -33,6 +33,7 @@ import java.io.InputStream;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -79,6 +80,7 @@ public class TestWebClientEasyMock
     }
     
     @Test
+//    @Ignore
     public void testGetContentInputStreamNull() throws Exception {
         expect( factory.getData() ).andReturn( null );
 
@@ -93,6 +95,7 @@ public class TestWebClientEasyMock
     }
 
     @Test
+//    @Ignore
     public void testGetContentCannotCloseInputStream() throws Exception {
         expect( factory.getData() ).andReturn( stream );
         expect( stream.read() ).andReturn( -1 );

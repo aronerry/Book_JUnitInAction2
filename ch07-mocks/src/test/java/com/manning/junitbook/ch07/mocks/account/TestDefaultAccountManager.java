@@ -44,6 +44,6 @@ public class TestDefaultAccountManager
         Account account = am.findAccountForUser( "1234" );
 
         // Perform asserts here
-        // […]
+        // [...]
     }
 }

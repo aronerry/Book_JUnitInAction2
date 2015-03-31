@@ -31,7 +31,7 @@
   <property name="target.report.dir" 
       location="${target.dir}/report"/>
 
-  <ivy:retrieve file="./ivy.xml" sync="true"/>
+  <!-- <ivy:retrieve file="./ivy.xml" sync="true"/> -->
   
   <property name="junit.jar" location="lib/junit-4.6.jar"/>
 

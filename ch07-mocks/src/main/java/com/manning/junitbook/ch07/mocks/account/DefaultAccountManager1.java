@@ -1,4 +1,4 @@
-/* 
+ï»¿/* 
  * ========================================================================
  * 
  * Licensed to the Apache Software Foundation (ASF) under one or more
@@ -51,7 +51,7 @@ public class DefaultAccountManager1
         String sql = bundle.getString( "FIND_ACCOUNT_FOR_USER" );
 
         // Some code logic to load a user account using JDBC
-        // […]
+        // [...]
         return null;
     }
 

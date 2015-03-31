@@ -52,7 +52,7 @@ public class TestWebClientSkeleton
     }
 
     @Test
-    @Ignore( value = "This is just initial skeleton of a test. " + "Therefore if we run it now it will fail." )
+//    @Ignore( value = "This is just initial skeleton of a test. " + "Therefore if we run it now it will fail." )
     public void testGetContentOk()
         throws Exception
     {
